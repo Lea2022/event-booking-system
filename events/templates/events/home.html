@@ -1,0 +1,28 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-3 text-center">Bienvenido a la Plataforma de Reserva de Eventos</h1>
+        <p class="text-center mb-5">Descubre y reserva eventos que te interesen.</p>
+
+        <!-- Lista de eventos -->
+        <div class="row">
+            {% for event in events %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <p class="card-text">{{ event.description }}</p>
+                            <p class="text-muted">Fecha: {{ event.date }}</p>
+                            <p class="text-muted">Ubicación: {{ event.location }}</p>
+                            <p><strong>Asistentes confirmados:</strong> {{ event.bookings.count }}</p>
+                            <a href="{% url 'confirm_booking' event.id %}" class="btn btn-primary">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center">No hay eventos disponibles.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

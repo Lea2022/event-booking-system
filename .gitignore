@@ -1,0 +1,26 @@
+# Ignorar el entorno virtual
+env/
+.env/
+
+# Ignorar archivos de base de datos (sqlite3, por ejemplo)
+*.sqlite3
+db.sqlite3
+
+# Ignorar archivos de caché y logs
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignorar archivos de migración
+migrations/
+
+# Ignorar archivos estáticos recopilados por collectstatic
+/static/
+
+# Ignorar archivos de configuración de IDEs (por ejemplo, Visual Studio Code, PyCharm)
+.vscode/
+.idea/
+
+# Ignorar archivos de sistema operativo
+.DS_Store  # macOS
+Thumbs.db  # Windows

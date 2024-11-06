@@ -1,0 +1,22 @@
+{% extends "events/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Confirmar Reserva</h2>
+        </div>
+        <div class="card-body text-center">
+            <p>¿Estás seguro de que deseas reservar el evento:</p>
+            <h4 class="text-primary">{{ event.name }}</h4>
+        </div>
+        <div class="card-footer text-center">
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" name="confirm" class="btn btn-success mx-2">Confirmar Reserva</button>
+                <button type="submit" name="cancel" class="btn btn-danger mx-2">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
